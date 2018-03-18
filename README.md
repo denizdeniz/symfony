@@ -42,6 +42,6 @@ grunt
 php bin/console server:run
 ```
 
-Logs:
+Logs are located at:
 
-``` hvar/log/transaction.log ```
+``` var/log/transaction.log ```
