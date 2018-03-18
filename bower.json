@@ -1,0 +1,24 @@
+{
+  "name": "PlatinGaming",
+  "description": "PlatinGaming Task",
+  "main": "index",
+  "authors": [
+    "Deniz Vatan Buyorük"
+  ],
+  "license": "MIT",
+  "homepage": "127.0.0.1",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "components-font-awesome": "^5.0.6",
+    "jquery": "^3.3.1"
+  }
+}

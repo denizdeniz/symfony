@@ -1,0 +1,40 @@
+body{
+	background-image: url("img/background2.jpg");
+    background-repeat:repeat;
+    background-size: 100%;
+
+}
+.modal-content{
+	background-color: #0b2c35cf;
+	color:white;
+}
+
+.modal-content a{
+	color:#ffffff94;
+	text-decoration: underline;
+}
+
+.modal-content a:hover{
+	color: #fff0f8;
+	-webkit-transform: scale(1.2);
+}
+
+.modal-heading h2{
+	color:white;
+	margin-top: 10%;
+
+}
+
+.help-block{
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    margin: auto;
+}
+
+.coin-info{
+	margin: auto;
+    padding-top: 30px;
+}
+
+/*#coin-hash{
+	width:100%;
+}*/

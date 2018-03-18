@@ -1,0 +1,15 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-body">
+			<p><a href="/">Back</a></p>
+
+			{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+		</div>
+	</div>
+</div>
+{% endblock %}

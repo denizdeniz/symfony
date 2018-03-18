@@ -1,0 +1,16 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-body">
+			<p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+
+			<p><a href="/">Back</a></p>
+
+		</div>
+	</div>
+</div>
+{% endblock fos_user_content %}

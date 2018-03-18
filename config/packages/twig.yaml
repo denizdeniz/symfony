@@ -1,0 +1,9 @@
+twig:
+    paths: 
+      '%kernel.project_dir%/templates' : theme
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    cache: false
+
+    globals:
+      fos_csrf_provider: "@security.csrf.token_manager"

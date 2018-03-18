@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+<div class="container">
+
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<div class="modal-body">
+					<div class="login-info">
+					<div style="float: left"> Hello, {{ app.user.username }} </div>
+					<div style="float:right;"> <a href="{{ path('fos_user_resetting_reset', {'token': token|default('{{token}}')}) }}">Reset Password</a> || <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></div>
+				</div>
+					<div class="coin-info">
+    				{{ render(controller('CoinBundle:Index:renderIndex')) }}
+    				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% else %}
+
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<h2 class="text-center">Log In</h2>
+			</div>
+			<hr />
+
+			<div class="modal-body">
+
+
+				<form id="loginform" role="form" action="{{ path("fos_user_security_check") }}"  method="post">
+					<input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.refreshToken('authenticate') }}" />
+
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+								<input id="login-username" type="text" class="form-control" name="_username" value="" placeholder="Username">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+								<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-lock"></i></div>
+								<input id="login-password" type="password" class="form-control" name="_password" placeholder="Password">
+							</div>
+						</div>
+
+					</div>
+
+					<div class="input-group">
+						<div class="checkbox">
+							<input id="login-remember" type="checkbox" name="_remember_me" value="1">
+							<label>
+								Remember Me
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group text-center">
+						<input type='submit' name="submit" id="btn-login" class="btn btn-success" value="Log In">
+					</div>
+					<div class="form-group text-right">
+
+						<a href="{{path("fos_user_resetting_request")}}">Forgot password?</a></div>
+
+						<div class="form-group">
+							<div class="col-md-12 control">
+								<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+									Don't have an account!
+									<a href="{{path("fos_user_registration_register")}}">
+										Registier Now!
+									</a>
+								</div>
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+ 	{% endif %}
+
+</div>
+{% endblock %}

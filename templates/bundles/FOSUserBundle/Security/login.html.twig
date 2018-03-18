@@ -1,0 +1,76 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block fos_user_content %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-heading">
+			<h2 class="text-center">Log In</h2>
+		</div>
+		<hr />
+
+		<div class="modal-body">
+			{% if error %}
+			<div style="" id="login-alert" class="alert alert-danger col-sm-12">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			<form id="loginform" role="form" action="{{ path("fos_user_security_check") }}"  method="post">
+				{% if csrf_token %}
+				<input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.refreshToken('authenticate') }}" />
+				{% endif %}
+
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+							<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+							<input id="login-username" type="text" class="form-control" name="_username" value="" placeholder="{{ 'security.login.username'|trans }}">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+							<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-lock"></i></div>
+							<input id="login-password" type="password" class="form-control" name="_password" placeholder="{{ 'security.login.password'|trans }}">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="input-group">
+					<div class="checkbox">
+						<input id="login-remember" type="checkbox" name="_remember_me" value="1">
+						<label>
+							{{ 'security.login.remember_me'|trans }}
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group text-center">
+					<input type='submit' name="submit" id="btn-login" class="btn btn-success" value="{{ 'security.login.submit'|trans }}">
+				</div>
+				<div class="form-group text-right">
+
+					<a href="{{path("fos_user_resetting_request")}}">Forgot password?</a></div>
+
+					<div class="form-group">
+						<div class="col-md-12 control">
+							<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+								Don't have an account!
+								<a href="{{path("fos_user_registration_register")}}">
+									Registier Now!
+								</a>
+							</div>
+						</div>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock fos_user_content %}

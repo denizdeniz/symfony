@@ -1,0 +1,18 @@
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: App\Entity\User
+    service:                               # this lines
+          mailer: fos_user.mailer.twig_swift
+    from_email:
+        address: "youremail@gmail.com"
+        sender_name: "Deniz Vatan"
+    #uncomment for registration checks
+    # registration:
+    #     confirmation:
+    #       enabled: true
+    resetting:
+        email:
+            from_email:
+              address: "youremail@gmail.com"
+              sender_name: "Deniz Vatan"
