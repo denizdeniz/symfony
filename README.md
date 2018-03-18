@@ -34,9 +34,9 @@ touch .bowerrc
 Add following lines to .bowerrc
 
 ``` 
-    {
-        "directory": "assets/bower"
-    }
+{
+  "directory": "assets/bower"
+}
 ```
 
 
