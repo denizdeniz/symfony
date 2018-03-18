@@ -1,8 +1,8 @@
 # Deniz Vatan Buyorük - PG Task
 
-##Project Setup
+## Project Setup
 
-## Setting up .evn
+### Setting up .evn
 
 Change this line with your credentials:
 
