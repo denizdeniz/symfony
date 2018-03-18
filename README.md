@@ -28,6 +28,18 @@ npm install
 ```
 
 ```command
+touch .bowerrc
+```
+
+Add following lines to .bowerrc
+
+``` {
+        "directory": "assets/bower"
+    }
+```
+
+
+```command
 
 bower install
 ```
