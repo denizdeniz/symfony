@@ -12,7 +12,7 @@ Change this line with your credentials:
 ### Build Settings
 
 ```command
-composer update
+composer install
 ```
 
 ```command
