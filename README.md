@@ -2,18 +2,17 @@
 
 ## Project Setup
 
-### Setting up .evn
-
-Change this line with your credentials:
-
-``` DATABASE_URL=mysql://root:root@127.0.0.1:8889/pgtask ```
-
-
-### Build Settings
 
 ```command
 composer install
 ```
+
+#### Setting up .evn
+
+Change this line with your credentials:
+
+``` DATABASE_URL=mysql://mysqluser:password@host:port/db_name ```
+
 
 ```command
 php bin/console doctrine:database:create
